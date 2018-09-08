@@ -1,2 +1,2 @@
-Dictator; A Data Structure Utility
+dict.ator; A Data Structure Utility
 ==============
