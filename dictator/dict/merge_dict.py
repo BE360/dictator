@@ -5,7 +5,9 @@ def merge_dict(*args: dict, **kwargs: dict):
     for data in args:
         for k, v in data.items():
             if k not in merged_data:
-                merged_data[k].update(v)
+                merged_data[k] = {}
+
+            merged_data.update(v)
 
     for data_name, data in kwargs.items():
         for k, v in data.items():
