@@ -1,12 +1,14 @@
 
-def merge_dict(*args: dict, **kwargs):
+def merge_dict(*args: dict, **kwargs: dict):
     merged_data = {}
 
     for data in args:
         for k, v in data.items():
-            merged_data[k] = v
+            if k not in merged_data:
+                merged_data[k].update(v)
 
     for data_name, data in kwargs.items():
-        merged_data[data_name] = data
+        for k, v in data.items():
+            merged_data[k][data_name] = data
 
     return merged_data
