@@ -1,6 +1,7 @@
+from typing import Union
 
 
-def list_to_dict(data_list: list, keys: tuple, distinct=True):
+def list_to_dict(data_list: list, keys: Union[str, tuple], distinct=True) -> dict:
     data_dict = {}
 
     for data in data_list:
